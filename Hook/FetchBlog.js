@@ -7,7 +7,7 @@ const useFetchBlogs = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("/api/Blogs/Read");
+        const response = await fetch("/api/Blog/Read");
         const data = await response.json();
         setBlogs(data);
         setLoading(false);

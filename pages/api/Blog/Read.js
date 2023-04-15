@@ -1,6 +1,7 @@
+import connect from "@/Backend/DataBase/conn";
+import BlogPost from "@/Backend/DataBase/model/Blog";
 import { Status } from "@/Data/StatusCodes";
-import BlogPost from "@/Database/Model/Blog";
-import connect from "@/Database/conn";
+
 
 export default async function handler(request, response) {
   if (request.method === "GET") {
@@ -12,8 +13,9 @@ export default async function handler(request, response) {
     } catch (error) {
       response.status(Status.Internal_Server_Err).json({
         message: error,
+        error:true
       });
-    }
+    }  
   } else {
     response.status(Status.BadRequest).json({
       message: "Invalid API call",

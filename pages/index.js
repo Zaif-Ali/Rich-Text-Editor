@@ -1,7 +1,12 @@
-export default function Home() {
+import Editor from "@/components/Editor/Editor";
+
+
+export default function Demo() {
+
   return (
     <>
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>
+     
+      <Editor />
     </>
   );
 }
